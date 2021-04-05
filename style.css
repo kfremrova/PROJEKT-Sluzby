@@ -17,36 +17,91 @@ pozadí stránky              #FAFAFA
 černá, nadpisy              #000000
 šedá, texty, čudlík         #8B8B8B
 bílá, boxíky                #FFFFFF
-sv. modrá, nepotřebná       #407BFF1F
+sv. modrá, stín             #407BFF1F
 modrá, čudlík, podtržení    #407BFF
 
 
-/*obecné stylování společné pro všechny verze*/
+/*obecné stylování a stylování pro mobil*/
 
 body {
+    color: #8B8B8B;
     background-color: #FAFAFA;
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
     font-weight: 300;
+    text-align: center;
+    padding: 60px 20px;
 }
 
 h1 {
     font-size: 28px;
     font-weight: 500;
+    color: #000000;
+    margin-top: 40px;
+    margin-bottom: 10px;
+}
+
+hr {
+    border-top: 2px solid #407BFF;
+    width: 60px;
+    margin-bottom: 30px;
 }
 
 h2 {
     font-size: 16px;
     font-weight: 500;
+    color: #000000;
+    margin-top: 60px;
+    margin-bottom: 15px;
+}
+
+a {
+    text-decoration: none;
+    color: #FFFFFF;
+    display: inline-block;
+}
+
+.uvod-obr {
+    width: 350px;
+}
+
+.uvod-cudliky {
+    display: flex;
+    flex-direction: column;
+    align-items: center;   
 }
 
 .cudlik {
     font-size: 14px;
     font-weight: 400;
     font-family: 'Montserrat', sans-serif;
+    padding: 10px 30px;
+    border-radius: 20px;
+}
+
+.dobrodruzstvi{
+    background-color: #407BFF;
+    margin: 10px;
+    width: 195px; /*nemělo by to jít jinak?*/
+}
+
+.plaz {
+    background-color: #8B8B8B;
+    width: 221px; /*protože se mi to o 1px začne zalamovat*/
+}
+
+.horni-box {
+    margin-top: 30px;
 }
 
 .boxik {
     font-size: 13px;
     font-weight: 300;
+    display: flex;
+    margin-bottom: 15px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0px 4px 6px #407BFF1F;
+    border-radius: 10px;
 }
+
