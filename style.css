@@ -109,7 +109,20 @@ a {
 .ikona {margin-right: 30px;}
 
 @media screen and (min-width:640px) {
-   /*toto srovna cudliky vedle sebe*/   
+    /*zvětšení obrázku*/
+    .uvod-obr {
+        width: 400px;
+    }
+
+    h1 {
+        margin-top: 30px;
+    }
+
+    h2 {
+        margin-top: 80px;
+    }
+
+    /*toto srovna cudliky vedle sebe*/   
    .uvod-cudliky {
         flex-direction: row;
         justify-content: center;
@@ -128,24 +141,37 @@ a {
         display: flex;
         flex-direction: column;
         margin-top: 40px;
-        margin-bottom: 80px;
     }
 
     .ikona {
         flex: 0 0 45px;
         margin-top: 40px;
+        margin-right: 0; /*aby se vrátily na střed*/
     }
 
     .popis-sluzby {
         margin-top: 20px;
     }
 
-@media screen and (min-width:1100px) {
+@media screen and (min-width:1100px) {    
+    /*max. šířka obsahu, centrování*/
+    .whole {
+        max-width: 1040px;
+        margin-left: auto;
+        margin-right: auto;
+    }    
+
     /*sekce jako tři pruhy pod sebou*/
     .uvod,
     .delegati,
     .kancelar {
         display: flex
+    }
+
+    /*obrácené pořadí u 1. a 3. sekce*/
+    .uvod,
+    .kancelar {
+        flex-direction: row-reverse;
     }
 
     /*rozestupy mezi sekcemi 80px*/
