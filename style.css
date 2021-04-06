@@ -105,3 +105,59 @@ a {
     border-radius: 10px;
 }
 
+/*odstup ikony od popisu služby 30px*/
+.ikona {margin-right: 30px;}
+
+@media screen and (min-width:640px) {
+   /*toto srovna cudliky vedle sebe*/   
+   .uvod-cudliky {
+        flex-direction: row;
+        justify-content: center;
+    }
+    
+    /*toto srovná sluzby po třech do řádku*/
+    .kancelar-sluzby,
+    .delegati-sluzby {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    /*a toto zařídí, aby měly mezi sebou služby rozestup 20px*/
+    .boxik {
+        width: calc((100% - 40px) / 3);
+        display: flex;
+        flex-direction: column;
+        margin-top: 40px;
+        margin-bottom: 80px;
+    }
+
+    .ikona {
+        flex: 0 0 45px;
+        margin-top: 40px;
+    }
+
+    .popis-sluzby {
+        margin-top: 20px;
+    }
+/*
+    @media screen and (min-width:1100px) {
+
+    }
+
+    .uvod,
+    .delegati,
+    .kancelar {
+        display: flex
+    }*/
+
+
+
+    
+
+
+
+
+
+
+
+}
