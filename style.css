@@ -174,9 +174,46 @@ a {
         flex-direction: row-reverse;
     }
 
+    /* až k dalšímu komentáři následuje zarovnání doleva*/
+    .uvod-obsah,
+    .kancelar-obsah,
+    .delegati-obsah {
+        text-align: left;
+    }
+
+    hr {
+        margin-left: 0;
+    }
+
+    .uvod-cudliky {
+        justify-content: left;
+    }
+
+    .dobrodruzstvi {
+        margin-left: 0;
+    }
+
     /*rozestupy mezi sekcemi 80px*/
     .uvod,
     .delegati {margin-bottom: 80px;}
+
+    /*rozměry úvodní sekce*/
+    .uvod-obr {
+        max-width: 425px;
+    }
+
+    .obrazek,
+    .uvod-obsah {
+        width: calc((100% - 60px) / 2);
+    }
+
+    .kancelar-sluzby,
+    .delegati-sluzby {
+        width: 550px;
+        display: flex;
+    }
+
+
 
 
     }
