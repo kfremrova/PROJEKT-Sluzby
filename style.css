@@ -19,7 +19,7 @@ pozadí stránky              #FAFAFA
 bílá, boxíky                #FFFFFF
 sv. modrá, stín             #407BFF1F
 modrá, čudlík, podtržení    #407BFF
-
+*/
 
 /*obecné stylování a stylování pro mobil*/
 
@@ -37,22 +37,40 @@ h1 {
   font-size: 28px;
   font-weight: 500;
   color: #000000;
-  margin-top: 40px;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
 }
 
+/*nová varianta modrého podrtržení pomocí ::after*/
+h1::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 2px;
+  background-color: #407bff;
+  align-self: center;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right:auto;
+}
+
+/*původní varianta modrého podtržení
 hr {
   border-top: 2px solid #407bff;
   width: 60px;
   margin-bottom: 30px;
-}
+}*/
 
 h2 {
   font-size: 16px;
   font-weight: 500;
   color: #000000;
-  margin-top: 60px;
   margin-bottom: 15px;
+}
+
+/*rozestup sekcí 60px*/
+.kancelar,
+.delegati {
+  margin-top: 60px;
 }
 
 a {
@@ -71,6 +89,10 @@ a {
   align-items: center;
 }
 
+.uvod-obsah {
+  margin-top: 40px;
+}
+
 .cudlik {
   font-size: 14px;
   font-weight: 400;
@@ -82,12 +104,12 @@ a {
 .dobrodruzstvi {
   background-color: #407bff;
   margin: 10px;
-  width: 195px; /*nemělo by to jít jinak?*/
+  /* width: 195px; měla jsem nastaveno původně, ale není třeba, nastaví se podle obsahu + paddingu*/
 }
 
 .plaz {
   background-color: #8b8b8b;
-  width: 221px; /*protože se mi to o 1px začne zalamovat*/
+  /* width: 221px; (viz výše)*/
 }
 
 .horni-box {
@@ -116,11 +138,13 @@ a {
     width: 400px;
   }
 
-  h1 {
+  .uvod-obsah {
     margin-top: 30px;
   }
 
-  h2 {
+  /*zvětší rozestup mezi sekcemi na 80px*/
+  .kancelar,
+  .delegati {
     margin-top: 80px;
   }
 
@@ -156,83 +180,93 @@ a {
   }
 }
 
-  @media screen and (min-width: 1100px) {
-    /*max. šířka obsahu, centrování*/
-    .whole {
-      max-width: 1040px;
-      margin-left: auto;
-      margin-right: auto;
-    }
+@media screen and (min-width: 1100px) {
+  /*max. šířka obsahu, centrování*/
+  .whole {
+    max-width: 1040px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
-    /*sekce jako tři pruhy pod sebou*/
-    .uvod,
-    .delegati,
-    .kancelar {
-      display: flex;
-      justify-content: space-between;
-    }
+  /*sekce jako tři pruhy pod sebou*/
+  .uvod,
+  .delegati,
+  .kancelar {
+    display: flex;
+    justify-content: space-between;
+  }
 
-    /*obrácené pořadí u 1. a 3. sekce*/
-    .uvod,
-    .kancelar {
-      flex-direction: row-reverse;
-    }
+  /*obrácené pořadí u 1. a 3. sekce*/
+  .uvod,
+  .kancelar {
+    flex-direction: row-reverse;
+  }
 
-    /* až k dalšímu komentáři následuje zarovnání doleva*/
-    .uvod-obsah,
-    .kancelar-obsah,
-    .delegati-obsah {
-      text-align: left;
-    }
+  /* až ke komentáři o rozestupech mezi sekcemi následuje zarovnání doleva*/
+  .uvod-obsah,
+  .kancelar-obsah,
+  .delegati-obsah {
+    text-align: left;
+  }
 
-    hr {
-      margin-left: 0;
-    }
+  /*nová modrá čára*/
+  h1::after{
+    margin-left: 0;
+  }
+  /*původní modrá čára
+  hr {
+    margin-left: 0;
+  }*/
 
-    .uvod-cudliky {
-      justify-content: left;
-    }
+  .uvod-cudliky {
+    justify-content: left;
+  }
 
-    .dobrodruzstvi {
-      margin-left: 0;
-    }
+  .dobrodruzstvi {
+    margin-left: 0;
+  }
 
-    /*rozestupy mezi sekcemi 80px*/
-    .uvod,
-    .delegati {
-      margin-bottom: 80px;
-    }
+  /*rozestupy mezi sekcemi 80px*/
+  .uvod,
+  .delegati {
+    margin-bottom: 80px;
+  }
 
-    /*rozměry úvodní sekce*/
-    .uvod-obr {
-      max-width: 425px;
-    }
+  /*zarovnání horní hrany úvodu s obrázkem*/
+  .uvod-obsah {
+    margin-top: 0;
+  }
 
-    .obrazek,
-    .uvod-obsah {
-      width: calc((100% - 60px) / 2);
-    }
+  /*rozměry úvodní sekce*/
+  .uvod-obr {
+    max-width: 425px;
+  }
 
-    /*nastavení šířek v rámci sekcí*/
-    .kancelar-obsah,
-    .delegati-obsah {
-      width: 430px;      
-    }
+  .obrazek,
+  .uvod-obsah {
+    width: calc((100% - 60px) / 2);
+  }
 
-    .kancelar-sluzby,
-    .delegati-sluzby {
-      width: 550px;
-    }
+  /*nastavení šířek v rámci sekcí*/
+  .kancelar-obsah,
+  .delegati-obsah {
+    width: 430px;
+    margin-top: auto;
+    margin-bottom: auto; /*aby se obsah srovnal vertikálně na střed*/
+  }
 
-    /*srovnání obsahu rámečků vertikálně na střed*/
-    .boxik {
-      padding: 40px 15px;
-      justify-content: space-between;
-    }
+  .kancelar-sluzby,
+  .delegati-sluzby {
+    width: 550px;
+  }
 
-    .ikona {
-      margin-top: 0;
-    }
+  /*srovnání obsahu rámečků vertikálně na střed*/
+  .boxik {
+    padding: 40px 15px;
+    justify-content: space-between;
+  }
 
+  .ikona {
+    margin-top: 0;
+  }
 }
-
